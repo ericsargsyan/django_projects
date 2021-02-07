@@ -1,0 +1,36 @@
+{"items":[
+    {
+        "name":"Natalie",
+        "surname":"Portman",
+        "age":39,
+        "height": 1.6,
+        "married": true,
+        "movies": ["Black Swan","Thor","V for Vendetta","The Other Boleyn Girl"]
+        
+    },
+    {
+        "name":"Scarlett",
+        "surname":"Johansson",
+        "age":35,
+        "height": 1.6,
+        "married": false,
+        "movies": ["Black Widow","Lucy","The Avengers","The Other Boleyn Girl"]        
+    },
+    {
+        "name":"Tom",
+        "surname":"Hanks",
+        "age":64,
+        "height": 1.8,
+        "married": true,
+        "movies": ["The Terminal","Forrest Gump","Catch Me If You Can","The Code Da Vinci"]
+    },
+    {
+        "name":"Morgan",
+        "surname":"Freeman",
+        "age":83,
+        "height": 1.8,
+        "married": true,
+        "movies": ["The Shawshenk Redemption","Angel Has Fallen","The Dark Knight","Ted 2"]
+    }
+]
+}

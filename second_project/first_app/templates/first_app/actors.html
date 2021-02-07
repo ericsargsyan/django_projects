@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <title>Actors</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        background-color: #E6E6FA;
+    }
+
+    a{
+        text-decoration: none;
+        cursor: pointer;
+        color: grey;
+    }
+
+    .container1{
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .drob{
+        font-family: 'Architects Daughter', cursive;
+        font-size: 32px;
+    }
+
+    .movie_names{
+        color: #f50a63;
+        font-family: 'Dancing Script', cursive;
+        font-size: 30px;
+    }
+
+    .name{
+        padding: 5px 10px;
+        margin-top: 10px;
+        box-shadow:  2px 5px 8px #708090;
+    }
+
+    .name>p:nth-child(1){
+        font-size: 30px;
+    }
+
+    .txt2{
+        margin-top: 10px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 25px;
+    }
+
+
+    hr{
+        width: 3px;
+       /* background-color: #6A5ACD;*/
+    }
+
+</style>
+
+<body>
+    <div class="container1">
+        <div class="left-sight"> 
+            <p class="drob"><b>Married Actors</b></p>
+                {% for i in items %}
+                    {% if i.married is True %}
+                <div class="name">    
+                    <p><i>{{ i.name }} {{ i.surname }}</i> known for taking part in films
+                            {% for name in i.movies %}
+                                <div class="movie_names">
+                                    <p>{{ name }}</p>
+                                </div>
+                            {% endfor %}
+                        <p class="txt2">
+                            To see more information about this actor <a href="https://en.wikipedia.org/wiki/">
+                                <b>Click here</b>
+                                </a>
+                        </p>
+                <!--        <a href="https://en.wikipedia.org/wiki/{{ name }}_{{ surname }}">click here</a>-->
+                    </p>
+                </div>
+                    {% endif %}
+                {% endfor %}
+        </div>
+        <hr>
+        <div class="right-site">
+            <p class="drob"><b>Not Married Actors</b></p>
+                {% for i in items %}
+                    {% if i.married is False %}
+                <div class="name">    
+                    <p><i>{{ i.name }} {{ i.surname }}</i> known for taking part in films
+                            {% for name in i.movies %}
+                                <div class="movie_names">
+                                    <b>{{ name }}</b>,
+                                </div>
+                            {% endfor %}
+                        <p class="txt2">
+                            To see more information about this actor <a href="https://en.wikipedia.org/wiki/">
+                            <b>Click here</b>
+                        </a>
+                        </p>
+                        
+                    </p>
+                </div>
+                    {% endif %}
+                {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
