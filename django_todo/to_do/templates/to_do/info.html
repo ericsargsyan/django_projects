@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+			*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body{
+		background: #091921;
+	}
+
+	a{
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 2rem;
+	}
+
+	.container:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 90%;
+		height: 100%;
+		background: linear-gradient(#e91e63,#ffc107);
+		clip-path: circle(22% at 30% 20%);
+	}
+
+	.container:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(#ffffff,#da00ff);
+		clip-path: circle(20% at 70% 90%);
+	}
+
+	.about{
+		width: 30rem;
+		height: 20rem;
+		margin-top: 315px;
+		padding: 0 10px;
+		position: absolute;
+		backdrop-filter: blur(10px);
+		z-index: 9;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		box-shadow: 5px 15px 20px grey;
+		font-family: 'Raleway', sans-serif;
+	}
+
+	.txt{
+		color: lightgrey;
+		font-size: 2rem;
+		font-family: 'Raleway', sans-serif;
+	}
+
+	.txt1{
+		margin-top: 1rem;
+		color: lightgrey;
+		font-size: 20px;
+		font-family: 'Raleway', sans-serif;
+	}
+
+	.about>a{
+		margin-top: 1rem;
+		color: lightblue;
+		font-size: 2rem;
+	}
+	</style>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="about">
+		    <p class="txt">About me</p>
+		    <p class="txt1">
+		    	Hi! My name is <b>Eric Sargsyan</b> and we are continuing exploring django framework.
+		    </p>
+		</div>
+	</div>
+</body>
+</html>

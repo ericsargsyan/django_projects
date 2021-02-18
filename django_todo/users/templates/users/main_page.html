@@ -1,0 +1,13 @@
+{% extends 'to_do/base.html' %}
+    {% block content %}
+<body>
+<center>
+    <h2>Users Page</h2>
+</center>
+<form method="post">
+    {% csrf_token %}
+    <a class="btn btn-sm btn-info" href="create_user/">Create User</a>
+    <a class="btn btn-sm btn-info" href="login/">Sign In</a>
+</form>
+</body>
+{% endblock content %}

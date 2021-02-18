@@ -1,0 +1,15 @@
+{% extends 'to_do/base.html' %}
+	{% block content %}
+	<div class="center-column">
+			<h3>Update Task</h3>
+			<form method="POST" >
+				<!-- here should be the form don't forget about csrf_token -->
+				{% csrf_token %}
+				Task Name:<br>{{ form.task_name }}
+				Description:<br>{{ form.description }}<br>
+				Status:<br>{{ form.status }}
+
+			<input class="btn btn-info" type="submit" name="Update Task">
+		</form>
+	</div>
+{% endblock %}
