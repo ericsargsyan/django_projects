@@ -1,0 +1,19 @@
+{% extends "to_do/base.html" %}
+{% block content %}
+<div class="todo-list">
+	<h3>Task View</h3>
+		<h2><strong>{{ task.name }}</strong></h2>
+		<br>
+		<h2><strong>{{ data }}</strong></h2>
+		<br>
+		<h2>{{ task.description }}</h2>
+		<br>
+		<h2>{{ task.date }}</h2>
+		<br>
+		<h2>{{ task.get_status_display }}</h2>
+		<br>
+
+	<a class="btn btn-sm btn-info" href="{% url 'TaskUpdate' task.id %}">Update</a>
+		<a class="btn btn-sm btn-danger" href="{% url 'TaskDelete' task.id %}">Delete</a>
+</div>
+{% endblock content%}

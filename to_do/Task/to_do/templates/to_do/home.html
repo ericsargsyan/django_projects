@@ -1,0 +1,52 @@
+{% extends 'to_do/base.html' %}
+{% block content %}
+	<div class="todo-list">
+	<h3>Tasks</h3>
+<!-- here is set up the task -->
+		{% for task in object_list %}
+
+		<div class="item-row">
+			<a class="btn btn-sm btn-info" href="{% url 'TaskUpdate' task.id %}">Update</a>
+			<a class="btn btn-sm btn-danger" href="{% url 'TaskDelete' task.id %}">Delete</a>
+			<!-- this a tag is for task special view -->
+			<a href="{% url 'TaskView' task.id %}">
+			<span>{{ task }}</span>
+			</a>
+		</div>
+		{% endfor %}
+		<div class="item-row">
+				<!-- this is for create -->
+				<a href="{% url 'NewTask' %}"><button class="btn btn-success" type="submit" name="Create Task">Create</button></a>
+		</div>
+	</div>
+
+<!--		pagination  -->
+		{% if is_paginated %}
+      <nav class="d-flex justify-content-center wow fadeIn">
+        <ul class="pagination pg-blue">
+          {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          {% endif %}
+          <li class="page-item active">
+            <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number}}
+              <span class="sr-only">{{ page_obj.page_number }}</span>
+            </a>
+          </li>
+          {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      {% endif %}
+
+{% endblock content %}
